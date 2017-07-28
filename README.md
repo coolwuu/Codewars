@@ -1,2 +1,2 @@
 # Codewars
-Learning by coding testing
+Learning by coding
