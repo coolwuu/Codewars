@@ -1,0 +1,4 @@
+C:\D\C#\UnitTestProject1\Welcome!\bin\Debug\Welcome!.dll
+C:\D\C#\UnitTestProject1\Welcome!\bin\Debug\Welcome!.pdb
+C:\D\C#\UnitTestProject1\Welcome!\obj\Debug\Welcome!.dll
+C:\D\C#\UnitTestProject1\Welcome!\obj\Debug\Welcome!.pdb

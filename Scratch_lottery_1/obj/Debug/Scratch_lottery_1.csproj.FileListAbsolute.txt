@@ -1,0 +1,5 @@
+C:\D\C#\Learn\UnitTestProject1\Scratch_lottery_1\bin\Debug\Scratch_lottery_1.dll
+C:\D\C#\Learn\UnitTestProject1\Scratch_lottery_1\bin\Debug\Scratch_lottery_1.pdb
+C:\D\C#\Learn\UnitTestProject1\Scratch_lottery_1\obj\Debug\Scratch_lottery_1.csprojResolveAssemblyReference.cache
+C:\D\C#\Learn\UnitTestProject1\Scratch_lottery_1\obj\Debug\Scratch_lottery_1.dll
+C:\D\C#\Learn\UnitTestProject1\Scratch_lottery_1\obj\Debug\Scratch_lottery_1.pdb

@@ -1,0 +1,5 @@
+C:\D\C#\UnitTestProject1\TowerBuilderBasic\bin\Debug\TowerBuilderBasic.dll
+C:\D\C#\UnitTestProject1\TowerBuilderBasic\bin\Debug\TowerBuilderBasic.pdb
+C:\D\C#\UnitTestProject1\TowerBuilderBasic\obj\Debug\TowerBuilderBasic.csprojResolveAssemblyReference.cache
+C:\D\C#\UnitTestProject1\TowerBuilderBasic\obj\Debug\TowerBuilderBasic.dll
+C:\D\C#\UnitTestProject1\TowerBuilderBasic\obj\Debug\TowerBuilderBasic.pdb

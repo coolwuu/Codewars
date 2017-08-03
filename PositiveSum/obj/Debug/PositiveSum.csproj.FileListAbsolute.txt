@@ -1,0 +1,5 @@
+C:\D\C#\UnitTestProject1\PositiveSum\bin\Debug\PositiveSum.dll
+C:\D\C#\UnitTestProject1\PositiveSum\bin\Debug\PositiveSum.pdb
+C:\D\C#\UnitTestProject1\PositiveSum\obj\Debug\PositiveSum.csprojResolveAssemblyReference.cache
+C:\D\C#\UnitTestProject1\PositiveSum\obj\Debug\PositiveSum.dll
+C:\D\C#\UnitTestProject1\PositiveSum\obj\Debug\PositiveSum.pdb

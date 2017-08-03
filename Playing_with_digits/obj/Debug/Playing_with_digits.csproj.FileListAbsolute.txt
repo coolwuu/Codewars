@@ -1,0 +1,5 @@
+C:\D\C#\Learn\UnitTestProject1\Playing_with_digits\bin\Debug\Playing_with_digits.dll
+C:\D\C#\Learn\UnitTestProject1\Playing_with_digits\bin\Debug\Playing_with_digits.pdb
+C:\D\C#\Learn\UnitTestProject1\Playing_with_digits\obj\Debug\Playing_with_digits.csprojResolveAssemblyReference.cache
+C:\D\C#\Learn\UnitTestProject1\Playing_with_digits\obj\Debug\Playing_with_digits.dll
+C:\D\C#\Learn\UnitTestProject1\Playing_with_digits\obj\Debug\Playing_with_digits.pdb

@@ -1,0 +1,5 @@
+C:\D\C#\Learn\UnitTestProject1\MorseCodeDecoder\bin\Debug\MorseCodeDecoder.dll
+C:\D\C#\Learn\UnitTestProject1\MorseCodeDecoder\bin\Debug\MorseCodeDecoder.pdb
+C:\D\C#\Learn\UnitTestProject1\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.csprojResolveAssemblyReference.cache
+C:\D\C#\Learn\UnitTestProject1\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.dll
+C:\D\C#\Learn\UnitTestProject1\MorseCodeDecoder\obj\Debug\MorseCodeDecoder.pdb

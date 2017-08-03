@@ -1,0 +1,5 @@
+C:\D\C#\Learn\UnitTestProject1\StopSpinningMyWords\bin\Debug\StopSpinningMyWords.dll
+C:\D\C#\Learn\UnitTestProject1\StopSpinningMyWords\bin\Debug\StopSpinningMyWords.pdb
+C:\D\C#\Learn\UnitTestProject1\StopSpinningMyWords\obj\Debug\StopSpinningMyWords.csprojResolveAssemblyReference.cache
+C:\D\C#\Learn\UnitTestProject1\StopSpinningMyWords\obj\Debug\StopSpinningMyWords.dll
+C:\D\C#\Learn\UnitTestProject1\StopSpinningMyWords\obj\Debug\StopSpinningMyWords.pdb

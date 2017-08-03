@@ -1,0 +1,12 @@
+C:\D\C#\UnitTestProject1\DoubleChar\bin\Debug\DoubleChar.dll
+C:\D\C#\UnitTestProject1\DoubleChar\bin\Debug\DoubleChar.pdb
+C:\D\C#\UnitTestProject1\DoubleChar\bin\Debug\UnitTestProject1.dll
+C:\D\C#\UnitTestProject1\DoubleChar\bin\Debug\UnitTestProject1.pdb
+C:\D\C#\UnitTestProject1\DoubleChar\obj\Debug\DoubleChar.csprojResolveAssemblyReference.cache
+C:\D\C#\UnitTestProject1\DoubleChar\obj\Debug\DoubleChar.dll
+C:\D\C#\UnitTestProject1\DoubleChar\obj\Debug\DoubleChar.pdb
+C:\D\C#\Learn\UnitTestProject1\DoubleChar\bin\Debug\DoubleChar.dll
+C:\D\C#\Learn\UnitTestProject1\DoubleChar\bin\Debug\DoubleChar.pdb
+C:\D\C#\Learn\UnitTestProject1\DoubleChar\obj\Debug\DoubleChar.csprojResolveAssemblyReference.cache
+C:\D\C#\Learn\UnitTestProject1\DoubleChar\obj\Debug\DoubleChar.dll
+C:\D\C#\Learn\UnitTestProject1\DoubleChar\obj\Debug\DoubleChar.pdb
