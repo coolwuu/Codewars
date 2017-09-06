@@ -10,7 +10,9 @@ namespace _0906_Reverse_Rotate
     {
         public static string RevRot(string numbers, int size)
         {
-            return string.Empty;
+            if(size <= 0)
+                return string.Empty;
+            return numbers;
         }
     }
 }
