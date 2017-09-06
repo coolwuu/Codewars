@@ -12,28 +12,18 @@ namespace _0906_Reverse_Rotate
                 return string.Empty;
 
             var result = string.Empty;
-            var numberGroup = Regex.Matches(number, "\\d{" + size + "}");
+            var numberGroup = Regex.Matches(number, $"\\d{{{size}}}");
 
             foreach (Match num in numberGroup)
-            {
-                char[] digitArray = num.Value.ToCharArray();
-
                 if (Sum(num.Value) % 2 == 0)
                 {
-                    Array.Reverse(digitArray);
-                    result += new string(digitArray);
+                    num.Value.Reverse();
+                    result += num.Value;
                 }
                 else
                 {
-                    var firstDigit = digitArray[0];
-                    var list = digitArray.ToList();
-                    list.RemoveAt(0);
-                    list.Add(firstDigit);
-                    result += string.Join("", list.ToArray());
-                    
+                    result += num.Value.Substring(1) + num.Value[0];
                 }
-
-            }
             return result;
         }
 
