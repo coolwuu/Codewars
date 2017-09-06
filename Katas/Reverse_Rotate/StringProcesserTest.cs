@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Reverse_Rotate
+namespace _0906_Reverse_Rotate
 {
-    public class Class1
+    class StringProcesserTest
     {
     }
 }
