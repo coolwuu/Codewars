@@ -8,5 +8,9 @@ namespace _0906_Reverse_Rotate
 {
     public class StringProcesser
     {
+        public static string RevRot(string numbers, int size)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
