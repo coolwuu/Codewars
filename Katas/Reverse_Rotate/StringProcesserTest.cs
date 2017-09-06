@@ -45,5 +45,17 @@ namespace _0906_Reverse_Rotate
             Assert.AreEqual("231654", StringProcesser.RevRot("123456", 3));
         }
 
+        [Test]
+        public void input_123456987653_with_size_6_return_234561356789()
+        {
+            Assert.AreEqual("234561356789", StringProcesser.RevRot("123456987653", 6));
+        }
+
+        [Test]
+        public void input_664438769_with_size_8_return_67834466()
+        {
+            Assert.AreEqual("67834466", StringProcesser.RevRot("664438769", 8));
+        }
+
     }
 }
