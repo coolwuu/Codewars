@@ -15,7 +15,8 @@ namespace _0906_Reverse_Rotate
                 return string.Empty;
 
             var result=string.Empty;
-            var numbers = Regex.Matches(number, @"\d{2}");
+            var pattern = "\\d{"+size+"}";
+            var numbers = Regex.Matches(number, pattern);
 ;            foreach (Match num in numbers)
             {
                 char[] digitArray = num.Value.ToCharArray();
