@@ -16,5 +16,13 @@ namespace _0906_Largest5Digit
             Assert.AreEqual(34,Kata.GetNumber(input));
 
         }
+
+        [Test]
+        public void input_6DigitNumber_return_greatest_2DigitNumber()
+        {
+            var input = 123456;
+            Assert.AreEqual(56, Kata.GetNumber(input));
+
+        }
     }
 }
