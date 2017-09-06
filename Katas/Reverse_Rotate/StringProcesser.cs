@@ -15,8 +15,7 @@ namespace _0906_Reverse_Rotate
                 return string.Empty;
 
             var result=string.Empty;
-            var pattern = "\\d{"+size+"}";
-            var numbers = Regex.Matches(number, pattern);
+            var numbers = Regex.Matches(number, "\\d{"+size+"}");
 ;            foreach (Match num in numbers)
             {
                 char[] digitArray = num.Value.ToCharArray();
@@ -25,13 +24,17 @@ namespace _0906_Reverse_Rotate
                     if (int.Parse(num.Value) % 2 == 0)
                     {
                         Array.Reverse(digitArray);
+                        result += new string(digitArray);
                     }
                     else
                     {
-                        
+                        var firstDigit = digitArray[0];
+                        var list = digitArray.ToList();
+                        list.RemoveAt(0);
+                        list.Add(firstDigit);
+                        result += string.Join("", list.ToArray()); ;
                     }
-                }
-                result += new string(digitArray);
+                } 
             }
             return result;
         }
