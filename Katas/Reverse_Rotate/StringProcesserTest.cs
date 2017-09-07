@@ -57,5 +57,17 @@ namespace _0906_Reverse_Rotate
             Assert.AreEqual("67834466", StringProcesser.RevRot("664438769", 8));
         }
 
+        [Test]
+        public void X()
+        {
+            Assert.AreEqual("0365065073456944", StringProcesser.RevRot("563000655734469485", 4));
+        }
+
+        [Test]
+        public void XX()
+        {
+            Assert.AreEqual("6300065575446948588355200928885449742097582992728062127314573841954797", StringProcesser.RevRot("56300065573446948588855200928875449742090827299285754137212673841954794395427", 10));
+        }
+
     }
 }

@@ -15,15 +15,19 @@ namespace _0906_Reverse_Rotate
             var numberGroup = Regex.Matches(number, $"\\d{{{size}}}");
 
             foreach (Match num in numberGroup)
+            {
+                
                 if (Sum(num.Value) % 2 == 0)
                 {
-                    num.Value.Reverse();
-                    result += num.Value;
+                    char[] digitArray = num.Value.ToCharArray();
+                    Array.Reverse(digitArray);
+                    result += new string(digitArray);
                 }
                 else
                 {
                     result += num.Value.Substring(1) + num.Value[0];
                 }
+            }
             return result;
         }
 
