@@ -12,9 +12,29 @@ namespace Bowling
             var finalScore = 0;
             GenerateFramesResultBy(playerResult);
 
-            foreach (var frame in _frameResult)
+            for (var index = 0; index < _frameResult.Count; index++)
             {
-                finalScore += frame.Score();
+                var frame = _frameResult[index];
+                if (index > 8)
+                {
+                    finalScore += frame.Score();
+                }
+                else
+                {
+                    finalScore += frame.Score();
+                    if (frame.Strike())
+                    {
+                        if (_frameResult[index + 1].Strike())
+                        {
+                            finalScore += _frameResult[index + 1].Score();
+                            finalScore += _frameResult[index + 2].ScoreOfFirstRoll();
+                        }
+                        else
+                        {
+                            finalScore += _frameResult[index + 1].Score();
+                        }
+                    }
+                }
             }
             return finalScore;
         }
@@ -26,40 +46,8 @@ namespace Bowling
             {
                 _frameResult.Add(new Frame(result));
             }
-                
+
         }
 
-    }
-
-    public class Frame
-    {
-        public Frame(string result)
-        {
-            Result = result;
-        }
-
-        private string FirstRoll => Result[0].ToString();
-        private string SecondRoll => Result[1].ToString();
-
-        private string Result { get; }
-
-        private bool SecondRollIsGutterBall()
-        {
-            return SecondRoll.Contains("-");
-        }
-
-        public int Score()
-        {
-            if (Strike())
-                return 10;
-            if (SecondRollIsGutterBall())
-                return int.Parse(FirstRoll);
-            return int.Parse(FirstRoll) + int.Parse(SecondRoll);
-        }
-
-        public bool Strike()
-        {
-            return FirstRoll.Contains("X");
-        }
     }
 }
