@@ -17,6 +17,8 @@ namespace Bowling
                 var frame = _frameResult[index];
                 if (index > 8)
                 {
+                    if (frame.Spare())
+                        finalScore += _frameResult[index].ScoreOfFirstRoll();
                     finalScore += frame.Score();
                 }
                 else

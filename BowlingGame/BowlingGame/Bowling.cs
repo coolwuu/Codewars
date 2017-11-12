@@ -46,6 +46,18 @@ namespace Bowling
             ScoreShouldBe(20, "1/ 1- 1- 1- 1- 1- 1- 1- 1- 1-");
         }
 
+        [Test]
+        public void first_frames_got_spare_second_frame_got_strike_should_return_39()
+        {
+            ScoreShouldBe(39, "1/ X 1- 1- 1- 1- 1- 1- 1- 1-");
+        }
+
+        [Test]
+        public void all_frames_got_spare_should_return_150()
+        {
+            ScoreShouldBe(150, "5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5");
+        }
+
         private void ScoreShouldBe(int expected, string playerResult)
         {
             Assert.AreEqual(expected, _bowlingGame.GetScoreBy(playerResult));
