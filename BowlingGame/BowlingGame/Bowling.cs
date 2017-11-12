@@ -36,9 +36,15 @@ namespace Bowling
         }
 
         [Test]
-        public void Get_strike_at_first_frames_should_return_300()
+        public void Get_strike_at_first_frames_should_return_20()
         {
             ScoreShouldBe(20, "X 1- 1- 1- 1- 1- 1- 1- 1- 1-");
+        }
+
+        [Test]
+        public void Get_strike_at_first_and_second_frames_should_return_40()
+        {
+            ScoreShouldBe(40, "X X 1- 1- 1- 1- 1- 1- 1- 1-");
         }
 
         private void ScoreShouldBe(int expected, string playerResult)
