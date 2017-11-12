@@ -15,7 +15,9 @@
 
         private int ScoreBy(string frame)
         {
-            return int.Parse(frame[0].ToString());
+            if (frame.Contains("-"))
+                return int.Parse(frame[0].ToString());
+            return int.Parse(frame[0].ToString()) +int.Parse(frame[1].ToString());
         }
     }
 }
