@@ -9,7 +9,7 @@
 
         private string FirstRoll => Result[0].ToString();
         private string SecondRoll => Result[1].ToString();
-        private string BonusRoll => Result[1].ToString();
+        private string BonusRoll => Result[2].ToString();
 
 
 
@@ -52,6 +52,8 @@
 
         public int ScoreOfBonusRoll()
         {
+            if (BonusRoll.Contains("X"))
+                return 10;
             return int.Parse(BonusRoll);
         }
     }

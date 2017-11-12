@@ -12,36 +12,50 @@ namespace Bowling
             var finalScore = 0;
             GenerateFramesResultBy(playerResult);
 
-            for (var index = 0; index < _frameResult.Count; index++)
+            for (var current = 0; current < _frameResult.Count; current++)
             {
-                var frame = _frameResult[index];
-                if (index > 8)
+                var frame = _frameResult[current];
+                if (current > 8)
                 {
                     if (frame.Spare())
-                        finalScore += _frameResult[index].ScoreOfFirstRoll();
+                        finalScore += _frameResult[current].ScoreOfBonusRoll();
                     finalScore += frame.Score();
                 }
                 else
                 {
                     finalScore += frame.Score();
-                    if(frame.Spare())
-                        finalScore +=  _frameResult[index + 1].ScoreOfFirstRoll();
-
-                    if (frame.Strike())
-                    {
-                        if (_frameResult[index + 1].Strike())
-                        {
-                            finalScore += _frameResult[index + 1].Score();
-                            finalScore += _frameResult[index + 2].ScoreOfFirstRoll();
-                        }
-                        else
-                        {
-                            finalScore += _frameResult[index + 1].Score();
-                        }
-                    }
+                    finalScore += GetScoreWhenSpare(current, frame);
+                    finalScore += GetScoreWhenStrike(current, frame);
                 }
             }
             return finalScore;
+        }
+
+        private int GetScoreWhenSpare( int index, Frame frame)
+        {
+            int result = 0;
+            if (frame.Spare())
+                result += _frameResult[index + 1].ScoreOfFirstRoll();
+            return result;
+        }
+
+        private int GetScoreWhenStrike( int index, Frame frame)
+        {
+            int result = 0;
+            if (frame.Strike())
+            {
+                if (_frameResult[index + 1].Strike())
+                {
+                    result += _frameResult[index + 1].Score();
+                    result += _frameResult[index + 2].ScoreOfFirstRoll();
+                }
+                else
+                {
+                    result += _frameResult[index + 1].Score();
+                }
+            }
+
+            return result;
         }
 
         private void GenerateFramesResultBy(string playerResult)
