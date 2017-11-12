@@ -22,6 +22,9 @@ namespace Bowling
                 else
                 {
                     finalScore += frame.Score();
+                    if(frame.Spare())
+                        finalScore +=  _frameResult[index + 1].ScoreOfFirstRoll();
+
                     if (frame.Strike())
                     {
                         if (_frameResult[index + 1].Strike())

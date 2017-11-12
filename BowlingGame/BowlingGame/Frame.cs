@@ -21,6 +21,8 @@
         {
             if (Strike())
                 return 10;
+            if (Spare())
+                return 10;
             if (SecondRollIsGutterBall())
                 return int.Parse(FirstRoll);
             return int.Parse(FirstRoll) + int.Parse(SecondRoll);
@@ -36,6 +38,13 @@
         public bool Strike()
         {
             return FirstRoll.Contains("X");
+        }
+
+        public bool Spare()
+        {
+            if (Strike())
+                return false;
+            return SecondRoll.Contains("/");
         }
     }
 }
