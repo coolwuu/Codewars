@@ -29,6 +29,12 @@ namespace Bowling
             ScoreShouldBe(90, "18 18 81 63 36 45 54 9- 09 18");
         }
 
+        [Test]
+        public void all_frames_got_strike_should_return_300()
+        {
+            ScoreShouldBe(300, "X X X X X X X X X X X X");
+        }
+
         private void ScoreShouldBe(int expected, string playerResult)
         {
             Assert.AreEqual(expected, _bowlingGame.GetScoreBy(playerResult));

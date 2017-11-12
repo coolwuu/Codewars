@@ -50,9 +50,16 @@ namespace Bowling
 
         public int Score()
         {
+            if (Strike())
+                return 10;
             if (SecondRollIsGutterBall())
                 return int.Parse(FirstRoll);
             return int.Parse(FirstRoll) + int.Parse(SecondRoll);
+        }
+
+        public bool Strike()
+        {
+            return FirstRoll.Contains("X");
         }
     }
 }
