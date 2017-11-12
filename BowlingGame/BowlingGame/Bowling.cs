@@ -24,7 +24,7 @@ namespace Bowling
     {
         public int GetScoreBy(string playerResult)
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }
