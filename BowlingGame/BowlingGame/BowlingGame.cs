@@ -24,34 +24,36 @@ namespace Bowling
                 else
                 {
                     finalScore += frame.Score();
-                    finalScore += GetScoreWhenSpare(current, frame);
-                    finalScore += GetScoreWhenStrike(current, frame);
+                    finalScore += GetScoreWhenSpare(frame);
+                    finalScore += GetScoreWhenStrike(frame);
                 }
             }
             return finalScore;
         }
 
-        private int GetScoreWhenSpare( int index, Frame frame)
+        private int GetScoreWhenSpare(Frame frame)
         {
+            var currentIndex = _frameResult.IndexOf(frame);
             int result = 0;
             if (frame.Spare())
-                result += _frameResult[index + 1].ScoreOfFirstRoll();
+                result += _frameResult[currentIndex + 1].ScoreOfFirstRoll();
             return result;
         }
 
-        private int GetScoreWhenStrike( int index, Frame frame)
+        private int GetScoreWhenStrike( Frame frame)
         {
             int result = 0;
+            var currentIndex = _frameResult.IndexOf(frame);
             if (frame.Strike())
             {
-                if (_frameResult[index + 1].Strike())
+                if (_frameResult[currentIndex + 1].Strike())
                 {
-                    result += _frameResult[index + 1].Score();
-                    result += _frameResult[index + 2].ScoreOfFirstRoll();
+                    result += _frameResult[currentIndex + 1].Score();
+                    result += _frameResult[currentIndex + 2].ScoreOfFirstRoll();
                 }
                 else
                 {
-                    result += _frameResult[index + 1].Score();
+                    result += _frameResult[currentIndex + 1].Score();
                 }
             }
 

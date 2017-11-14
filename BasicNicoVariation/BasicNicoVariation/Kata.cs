@@ -34,7 +34,7 @@ namespace BasicNicoVariation
 
         public static string Nico(string unsortedKey, string message)
         {
-            var sortedKey = unsortedKey.Select(e => string.Concat(unsortedKey.OrderBy(x => x)).IndexOf(e) +1).ToArray();
+            var sortedKey = unsortedKey.Select(e => string.Concat(unsortedKey.OrderBy(x => x)).IndexOf(e)).ToArray();
             message = message.PadRight((int)Math.Ceiling((double)message.Length / unsortedKey.Length) * unsortedKey.Length);
             var messageArray = message.ToCharArray();
             var messageDictionary = new SortedDictionary<int, Queue<char>>();
@@ -51,7 +51,7 @@ namespace BasicNicoVariation
             for (var i = 0; i < message.Length; i++)
             {
                 var j = i % sortedKey.Length;
-                result += messageDictionary[j + 1].Dequeue();
+                result += messageDictionary[j].Dequeue();
             }
 
             return result;

@@ -12,7 +12,6 @@
         private string BonusRoll => Result[2].ToString();
 
 
-
         private string Result { get; }
 
         private bool SecondRollIsGutterBall()
@@ -29,13 +28,6 @@
             if (SecondRollIsGutterBall())
                 return int.Parse(FirstRoll);
             return int.Parse(FirstRoll) + int.Parse(SecondRoll);
-        }
-
-        public int ScoreOfFirstRoll()
-        {
-            if (Strike())
-                return 10;
-            return int.Parse(FirstRoll);
         }
 
         public bool Strike()
@@ -55,6 +47,13 @@
             if (BonusRoll.Contains("X"))
                 return 10;
             return int.Parse(BonusRoll);
+        }
+
+        public int ScoreOfFirstRoll()
+        {
+            if (Strike())
+                return 10;
+            return int.Parse(FirstRoll);
         }
     }
 }
