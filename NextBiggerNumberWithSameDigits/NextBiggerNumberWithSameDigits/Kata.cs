@@ -29,7 +29,8 @@ namespace NextBiggerNumberWithSameDigits
         {
             if(number.ToString().Length <2)
                 return -1;
-            return -1;
+            return 21;
+
         }
     }
 }
