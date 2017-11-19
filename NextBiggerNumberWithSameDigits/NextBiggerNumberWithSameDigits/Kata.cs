@@ -53,8 +53,7 @@ namespace NextBiggerNumberWithSameDigits
             {
                 if (num[i] > num[i - 1])
                 {
-                    var temp = new char();
-                    temp = num[i];
+                    var temp = num[i];
                     num[i] = num[i - 1];
                     num[i - 1] = temp;
                     break;
