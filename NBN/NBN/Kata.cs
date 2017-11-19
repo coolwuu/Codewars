@@ -12,12 +12,28 @@ namespace NBN
         [Test]
         public void input_8_should_return_minus_one()
         {
-            Assert.AreEqual(-1,NextBiggerNumber(9));
+            Assert.AreEqual(-1, NextBiggerNumber(9));
+        }
+        [Test]
+        public void input_12_should_return_21()
+        {
+            Assert.AreEqual(-1, NextBiggerNumber(9));
         }
 
         private int NextBiggerNumber(int number)
         {
-            return -1;
+            if (number.ToString().Length < 2)
+                return -1;
+
+            var numInArray = GetArrayBy(number);
+            Array.Reverse(numInArray);
+            return int.Parse(new string(numInArray));
+
+        }
+
+        private char[] GetArrayBy(int number)
+        {
+            return number.ToString().ToCharArray();
         }
     }
 }
