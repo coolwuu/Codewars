@@ -22,7 +22,7 @@ namespace NextBiggerNumberWithSameDigits
         [Test]
         public void input_13_should_return_31()
         {
-            Assert.AreEqual(21,NextBigNumber(12));
+            Assert.AreEqual(31,NextBigNumber(12));
         }
 
         private int NextBigNumber(int number)
