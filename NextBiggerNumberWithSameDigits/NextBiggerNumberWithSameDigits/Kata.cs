@@ -31,7 +31,11 @@ namespace NextBiggerNumberWithSameDigits
         {
             Assert.AreEqual(-1, NextBigNumber(31));
         }
-
+        [Test]
+        public void input_111_should_return_minus_1()
+        {
+            Assert.AreEqual(-1, NextBigNumber(111));
+        }
         private int NextBigNumber(int number)
         {
             if (number.ToString().Length < 2)
