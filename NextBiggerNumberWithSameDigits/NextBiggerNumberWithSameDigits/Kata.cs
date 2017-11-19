@@ -19,6 +19,11 @@ namespace NextBiggerNumberWithSameDigits
         {
             Assert.AreEqual(-1,NextBigNumber(8));
         }
+        [Test]
+        public void input_12_should_return_21()
+        {
+            Assert.AreEqual(21,NextBigNumber(12));
+        }
 
         private int NextBigNumber(int number)
         {
