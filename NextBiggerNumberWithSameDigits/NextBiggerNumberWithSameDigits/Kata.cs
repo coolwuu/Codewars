@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,11 +36,29 @@ namespace NextBiggerNumberWithSameDigits
         {
             if (number.ToString().Length < 2)
                 return -1;
-            var num = number.ToString().ToCharArray();
-            Array.Reverse(num);
-            string num1 = new string(num);
-            return int.Parse(num1);
 
+            var num = GetCharArrayBy(number);
+
+            for (var i = num.Length - 1; i >= 1; i--)
+            {
+                if (num[i] > num[i - 1])
+                {
+                    var temp = new char();
+                    temp = num[i];
+                    num[i] = num[i - 1];
+                    num[i - 1] = temp;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            return int.Parse(new string(num));
+        }
+
+        private static char[] GetCharArrayBy(int number)
+        {
+            return number.ToString().ToCharArray();
         }
     }
 }
