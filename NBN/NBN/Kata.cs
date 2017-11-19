@@ -29,6 +29,12 @@ namespace NBN
         {
             Assert.AreEqual(132, NextBiggerNumber(123));
         }
+        [Test]
+        public void input_132_should_return_213()
+        {
+            Assert.AreEqual(213, NextBiggerNumber(132));
+        }
+
 
         private int NextBiggerNumber(int number)
         {
@@ -41,9 +47,28 @@ namespace NBN
             {
                 if (num[i] > num[i - 1])
                 {
-                    var temp = num[i];
-                    num[i] = num[i - 1];
-                    num[i - 1] = temp; 
+                    var rightPart = new List<char>();
+                    var leftPart = new List<char>();
+                    var lNum = new List<char>();
+                    for (var j = i - 1; j < num.Length; j++)
+                    {
+                        rightPart.Add(num[j]);
+                        if (num[j] > num[i - 1])
+                        {
+                            lNum.Add(num[j]);
+                        }
+                    }
+                    var largerNum = lNum.Min();
+                    num[i - 1] = largerNum;
+                    for (var j = 0; j < i; j++)
+                    {
+                        leftPart.Add(num[j]);
+                    }
+                    rightPart.Remove(largerNum);
+                    var a = new char[leftPart.Count+rightPart.Count];
+                    leftPart.CopyTo(a,0);
+                    rightPart.CopyTo(a,leftPart.Count);
+                    num = a;
                     IsChanged = true;
                     break;
                 }
