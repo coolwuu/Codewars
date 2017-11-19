@@ -24,6 +24,11 @@ namespace NBN
         {
             Assert.AreEqual(-1, NextBiggerNumber(21));
         }
+        [Test]
+        public void input_123_should_return_132()
+        {
+            Assert.AreEqual(132, NextBiggerNumber(123));
+        }
 
         private int NextBiggerNumber(int number)
         {
@@ -32,12 +37,15 @@ namespace NBN
 
             var num = GetArrayBy(number);
             bool IsChanged = false;
-            for (int i = num.Length - 1; i <= 1; i++)
+            for (int i = num.Length - 1; i >= 1; i--)
             {
                 if (num[i] > num[i - 1])
                 {
-                    Array.Reverse(num);
+                    var temp = num[i];
+                    num[i] = num[i - 1];
+                    num[i - 1] = temp; 
                     IsChanged = true;
+                    break;
                 }
             }
             return IsChanged ? int.Parse(new string(num)) : -1;
