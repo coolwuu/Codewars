@@ -17,7 +17,12 @@ namespace NBN
         [Test]
         public void input_12_should_return_21()
         {
-            Assert.AreEqual(-1, NextBiggerNumber(9));
+            Assert.AreEqual(21, NextBiggerNumber(12));
+        }
+        [Test]
+        public void input_21_should_return_minus_one()
+        {
+            Assert.AreEqual(-1, NextBiggerNumber(21));
         }
 
         private int NextBiggerNumber(int number)
