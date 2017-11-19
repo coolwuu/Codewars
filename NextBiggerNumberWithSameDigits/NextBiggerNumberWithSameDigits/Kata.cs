@@ -36,6 +36,12 @@ namespace NextBiggerNumberWithSameDigits
         {
             Assert.AreEqual(-1, NextBigNumber(111));
         }
+        [Test]
+        public void input_123_should_return_132()
+        {
+            Assert.AreEqual(132, NextBigNumber(123));
+        }
+
         private int NextBigNumber(int number)
         {
             if (number.ToString().Length < 2)
@@ -51,6 +57,7 @@ namespace NextBiggerNumberWithSameDigits
                     temp = num[i];
                     num[i] = num[i - 1];
                     num[i - 1] = temp;
+                    break;
                 }
                 else
                 {
