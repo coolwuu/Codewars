@@ -17,7 +17,7 @@ namespace NBN
 
         private int NextBiggerNumber(int number)
         {
-            throw new NotImplementedException();
+            return -1;
         }
     }
 }
