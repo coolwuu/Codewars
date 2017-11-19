@@ -15,11 +15,6 @@ namespace NextBiggerNumberWithSameDigits
             Assert.AreEqual(-1,NextBigNumber(9));
         }
         [Test]
-        public void input_8_should_return_minus_1()
-        {
-            Assert.AreEqual(-1,NextBigNumber(8));
-        }
-        [Test]
         public void input_12_should_return_21()
         {
             Assert.AreEqual(21,NextBigNumber(12));
