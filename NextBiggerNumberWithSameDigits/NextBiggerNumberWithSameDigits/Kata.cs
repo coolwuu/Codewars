@@ -17,7 +17,7 @@ namespace NextBiggerNumberWithSameDigits
 
         private int NextBigNumber(int number)
         {
-            throw new NotImplementedException();
+            return -1;
         }
     }
 }
