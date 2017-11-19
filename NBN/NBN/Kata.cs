@@ -30,9 +30,17 @@ namespace NBN
             if (number.ToString().Length < 2)
                 return -1;
 
-            var numInArray = GetArrayBy(number);
-            Array.Reverse(numInArray);
-            return int.Parse(new string(numInArray));
+            var num = GetArrayBy(number);
+            bool IsChanged = false;
+            for (int i = num.Length - 1; i <= 1; i++)
+            {
+                if (num[i] > num[i - 1])
+                {
+                    Array.Reverse(num);
+                    IsChanged = true;
+                }
+            }
+            return IsChanged ? int.Parse(new string(num)) : -1;
 
         }
 
