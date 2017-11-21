@@ -12,13 +12,12 @@ namespace Bowling
             var finalScore = 0;
             GenerateFramesResultBy(playerResult);
 
-            for (var current = 0; current < _frameResult.Count; current++)
+            foreach (Frame frame in _frameResult)
             {
-                var frame = _frameResult[current];
-                if (current > 8)
+                if (CheckIsLastFrame(frame))
                 {
                     if (frame.Spare())
-                        finalScore += _frameResult[current].ScoreOfBonusRoll();
+                        finalScore += frame.ScoreOfBonusRoll();
                     finalScore += frame.Score();
                 }
                 else
@@ -31,16 +30,22 @@ namespace Bowling
             return finalScore;
         }
 
-        private int GetScoreWhenSpare(Frame frame)
+        private bool CheckIsLastFrame(Frame frame)
         {
             var currentIndex = _frameResult.IndexOf(frame);
+            return currentIndex > 8;
+        }
+
+        private int GetScoreWhenSpare(Frame frame)
+        {
             int result = 0;
+            var currentIndex = _frameResult.IndexOf(frame);
             if (frame.Spare())
                 result += _frameResult[currentIndex + 1].ScoreOfFirstRoll();
             return result;
         }
 
-        private int GetScoreWhenStrike( Frame frame)
+        private int GetScoreWhenStrike(Frame frame)
         {
             int result = 0;
             var currentIndex = _frameResult.IndexOf(frame);

@@ -35,51 +35,75 @@ namespace NBN
             Assert.AreEqual(213, NextBiggerNumber(132));
         }
 
+        [Test]
+        public void input_1234567890_should_return_1234567908()
+        {
+            Assert.AreEqual(1234567908, NextBiggerNumber(1234567890));
+        }
 
-        private int NextBiggerNumber(int number)
+
+        private static long NextBiggerNumber(long number)
         {
             if (number.ToString().Length < 2)
                 return -1;
 
             var num = GetArrayBy(number);
             bool IsChanged = false;
-            for (int i = num.Length - 1; i >= 1; i--)
+            for (int index = num.Length - 1; index >= 1; index--)
             {
-                if (num[i] > num[i - 1])
+                if (num[index] > num[index - 1])
                 {
-                    var rightPart = new List<char>();
-                    var leftPart = new List<char>();
-                    var lNum = new List<char>();
-                    for (var j = i - 1; j < num.Length; j++)
-                    {
-                        rightPart.Add(num[j]);
-                        if (num[j] > num[i - 1])
-                        {
-                            lNum.Add(num[j]);
-                        }
-                    }
-                    var largerNum = lNum.Min();
-                    num[i - 1] = largerNum;
-                    for (var j = 0; j < i; j++)
-                    {
-                        leftPart.Add(num[j]);
-                    }
-                    rightPart.Remove(largerNum);
-                    var a = new char[leftPart.Count+rightPart.Count];
-                    leftPart.CopyTo(a,0);
-                    rightPart.CopyTo(a,leftPart.Count);
-                    num = a;
-                    IsChanged = true;
+                    num = GenerateNextBiggerNumber(index, num, ref IsChanged);
                     break;
                 }
             }
-            return IsChanged ? int.Parse(new string(num)) : -1;
+            return IsChanged ? Convert.ToInt64(new string(num)) : -1;
 
         }
 
-        private char[] GetArrayBy(int number)
+        private static char[] GenerateNextBiggerNumber(int index, char[] num, ref bool isChanged)
+        {
+            var rightPart = new List<char>();
+            var leftPart = new List<char>();
+            var lNum = new List<char>();
+
+            for (var j = index - 1; j < num.Length; j++)
+            {
+                rightPart.Add(num[j]);
+                if (num[j] > num[index - 1])
+                {
+                    lNum.Add(num[j]);
+                }
+            }
+
+            num[index - 1] = lNum.Min();
+
+            for (var j = 0; j < index; j++)
+            {
+                leftPart.Add(num[j]);
+            }
+
+            rightPart.Remove(lNum.Min());
+            rightPart.Sort();
+
+            num = JoinArray(leftPart, rightPart);
+            isChanged = true;
+            return num;
+        }
+
+        private static char[] JoinArray(List<char> leftPart, List<char> rightPart)
+        {
+            var a = new char[leftPart.Count + rightPart.Count];
+            leftPart.CopyTo(a, 0);
+            rightPart.CopyTo(a, leftPart.Count);
+            return a;
+        }
+
+        private static char[] GetArrayBy(long number)
         {
             return number.ToString().ToCharArray();
         }
+
+
     }
 }
