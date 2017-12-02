@@ -16,7 +16,7 @@ namespace FruitMachine
 
         private static int Fruit(List<string[]> reels, int[] spins)
         {
-            throw new System.NotImplementedException();
+            return 0;
         }
     }
 }
