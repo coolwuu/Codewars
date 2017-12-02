@@ -39,6 +39,8 @@ namespace FruitMachine
                 result.Add(reels[i][spins[i]]);
             }
 
+            if (result[0] == result[1] && result[1] == result[2])
+                return 10;
             if (result[0] == result[1] || result[1] == result[2])
                 return 1;
             return 0;
