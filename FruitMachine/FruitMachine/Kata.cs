@@ -24,6 +24,15 @@ namespace FruitMachine
 
         private static int Fruit(List<string[]> reels, int[] spins)
         {
+            int score = 0;
+            List<string> result = new List<string>();
+            for (int i = 0; i < 3; i++)
+            {
+                result.Add(reels[i][spins[i]]);
+            }
+
+            if (result[0] == result[1] || result[1] == result[2])
+                return 1;
             return 0;
         }
     }
