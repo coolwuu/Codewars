@@ -22,12 +22,19 @@ namespace Bowling
                 }
                 else
                 {
-                    finalScore += frame.Score();
-                    finalScore += GetScoreWhenSpare(frame);
-                    finalScore += GetScoreWhenStrike(frame);
+                    finalScore += GetScoreBy(frame);
                 }
             }
             return finalScore;
+        }
+
+        private int GetScoreBy(Frame frame)
+        {
+            var result = 0;
+            result += frame.Score();
+            result += GetScoreWhenSpare(frame);
+            result += GetScoreWhenStrike(frame);
+            return result;
         }
 
         private bool CheckIsLastFrame(Frame frame)

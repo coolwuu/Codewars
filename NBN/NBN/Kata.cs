@@ -12,7 +12,7 @@ namespace NBN
         [Test]
         public void input_8_should_return_minus_one()
         {
-            Assert.AreEqual(-1, NextBiggerNumber(9));
+            Assert.AreEqual(-1, NextBiggerNumber(8));
         }
         [Test]
         public void input_12_should_return_21()
@@ -65,25 +65,25 @@ namespace NBN
         {
             var rightPart = new List<char>();
             var leftPart = new List<char>();
-            var lNum = new List<char>();
+            var largerNum = new List<char>();
 
             for (var j = index - 1; j < num.Length; j++)
             {
                 rightPart.Add(num[j]);
                 if (num[j] > num[index - 1])
                 {
-                    lNum.Add(num[j]);
+                    largerNum.Add(num[j]);
                 }
             }
 
-            num[index - 1] = lNum.Min();
+            num[index - 1] = largerNum.Min();
 
             for (var j = 0; j < index; j++)
             {
                 leftPart.Add(num[j]);
             }
 
-            rightPart.Remove(lNum.Min());
+            rightPart.Remove(largerNum.Min());
             rightPart.Sort();
 
             num = JoinArray(leftPart, rightPart);
