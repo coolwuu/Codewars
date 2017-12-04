@@ -23,16 +23,21 @@ namespace FruitMachine2
             Assert.AreEqual(1, Fruit(reels, spins));
         }
 
-        private static int Fruit(List<string[]> reels,int[] spins)
+        private static int Fruit(List<string[]> reels, int[] spins)
         {
             List<string> result = new List<string>();
             for (int i = 0; i < reels.Count; i++)
             {
                 result.Add(reels[i][spins[i]]);
             }
-            if (result[0] == result[1] || result[1] == result[2])
+            if (TwoSameItemsIn(result))
                 return 1;
             return 0;
+        }
+
+        private static bool TwoSameItemsIn(List<string> result)
+        {
+            return result[0] == result[1] || result[1] == result[2] || result[0] == result[2];
         }
     }
 }
