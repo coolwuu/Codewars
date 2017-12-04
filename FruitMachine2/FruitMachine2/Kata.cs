@@ -25,12 +25,12 @@ namespace FruitMachine2
 
         private static int Fruit(List<string[]> reels, int[] spins)
         {
-            List<string> result = new List<string>();
+            List<string> slotResult = new List<string>();
             for (int i = 0; i < reels.Count; i++)
             {
-                result.Add(reels[i][spins[i]]);
+                slotResult.Add(reels[i][spins[i]]);
             }
-            if (TwoSameItemsIn(result))
+            if (TwoSameItemsIn(slotResult))
                 return 1;
             return 0;
         }
