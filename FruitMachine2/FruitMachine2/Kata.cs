@@ -50,21 +50,40 @@ namespace FruitMachine2
             {
                 slotResult.Add(reels[i][spins[i]]);
             }
+            var item = GetMatchingItemIn(slotResult);
+            return GetScoreBy(item,slotResult);
+        }
 
-            var matchingItem = GetMatchingItemBy(slotResult);
-            if (matchingItem.Count == 3)
-                return 10;
-            if (matchingItem.Count == 2)
+        private static int GetScoreBy(Item item,List<string> slotResult)
+        {
+            var bonusRate = 2;
+            var scoreMapping = new Dictionary<string, Dictionary<string, int>>()
             {
+                { "Wild", new Dictionary<string, int> { { "ThreeOfSame", 100 }, { "TwoOfSame", 10 } } },
+                { "Star", new Dictionary<string, int> { { "ThreeOfSame", 90 }, { "TwoOfSame", 9 } } },
+                { "Bell", new Dictionary<string, int> { { "ThreeOfSame", 80 }, { "TwoOfSame", 8 } } },
+                { "Shell", new Dictionary<string, int> { { "ThreeOfSame", 70 }, { "TwoOfSame", 7 } } },
+                { "Seven", new Dictionary<string, int> { { "ThreeOfSame", 60 }, { "TwoOfSame", 6 } } },
+                { "Cherry", new Dictionary<string, int> { { "ThreeOfSame", 50 }, { "TwoOfSame", 5 } } },
+                { "Bar", new Dictionary<string, int> { { "ThreeOfSame", 40 }, { "TwoOfSame", 4 } } },
+                { "King", new Dictionary<string, int> { { "ThreeOfSame", 30 }, { "TwoOfSame", 3 } } },
+                { "Queen", new Dictionary<string, int> { { "ThreeOfSame", 20 }, { "TwoOfSame", 2 } } },
+                { "Jack", new Dictionary<string, int> { { "ThreeOfSame", 10 }, { "TwoOfSame", 1 } } },
+            };
+            if (item.Count == 3)
+                return scoreMapping[item.Name]["ThreeOfSame"];
+            if (item.Count == 2)
+            {
+                if (item.Name == "Wild")
+                    return scoreMapping[item.Name]["TwoOfSame"];
                 if (slotResult.Contains("Wild"))
-                    return 2;
-                return 1;
+                    return scoreMapping[item.Name]["TwoOfSame"] * bonusRate;
+                return scoreMapping[item.Name]["TwoOfSame"];
             }
-                
             return 0;
         }
 
-        private static Item GetMatchingItemBy(List<string> slotResult)
+        private static Item GetMatchingItemIn(List<string> slotResult)
         {
             var result = slotResult
                 .GroupBy(r => r)
