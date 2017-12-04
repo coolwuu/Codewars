@@ -40,20 +40,37 @@ namespace FruitMachine2
                 slotResult.Add(reels[i][spins[i]]);
             }
 
-            var matchingItem = slotResult
-                .GroupBy(r => r)
-                .Select(result => new { item = result.Key, count = result.Count() })
-                .ToList();
-            if (matchingItem[0].count == 3)
+            var matchingItem = GetMatchingItemBy(slotResult);
+            if (matchingItem.Count == 3)
                 return 10;
-            if (TwoSameItemsIn(slotResult))
+            if (matchingItem.Count ==2)
                 return 1;
             return 0;
+        }
+
+        private static Item GetMatchingItemBy(List<string> slotResult)
+        {
+            var result = slotResult
+                .GroupBy(r => r)
+                .Select(g => new { item = g.Key, count = g.Count() })
+                .ToList();
+            return new Item(result[0].item,result[0].count);
         }
 
         private static bool TwoSameItemsIn(List<string> result)
         {
             return result[0] == result[1] || result[1] == result[2] || result[0] == result[2];
+        }
+    }
+
+    internal class Item
+    {
+        public int Count;
+        public string Name;
+        public Item(string name, int count)
+        {
+            Name = name;
+            Count = count;
         }
     }
 }
