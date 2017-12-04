@@ -43,12 +43,20 @@ namespace FruitMachine2
         }
 
         [Test]
-        public void Two_of_Wild__return_10()
+        public void Two_of_Wild_return_10()
         {
             string[] reel = { "Wild", "Star", "Bell", "Shell", "Seven", "Cherry", "Bar", "King", "Queen", "Jack" };
             List<string[]> reels = new List<string[]> { reel, reel, reel };
             int[] spins = { 0, 9, 0 };
             Assert.AreEqual(10, Fruit(reels, spins));
+        }
+        [Test]
+        public void Three_of_Wild_return_100()
+        {
+            string[] reel = { "Wild", "Star", "Bell", "Shell", "Seven", "Cherry", "Bar", "King", "Queen", "Jack" };
+            List<string[]> reels = new List<string[]> { reel, reel, reel };
+            int[] spins = { 0, 0, 0 };
+            Assert.AreEqual(100, Fruit(reels, spins));
         }
 
 
