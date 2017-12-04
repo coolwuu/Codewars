@@ -50,6 +50,7 @@ namespace FruitMachine2
             int[] spins = { 0, 9, 0 };
             Assert.AreEqual(10, Fruit(reels, spins));
         }
+
         [Test]
         public void Three_of_Wild_return_100()
         {
@@ -57,6 +58,17 @@ namespace FruitMachine2
             List<string[]> reels = new List<string[]> { reel, reel, reel };
             int[] spins = { 0, 0, 0 };
             Assert.AreEqual(100, Fruit(reels, spins));
+        }
+
+        [Test]
+        public void Two_of_Bar_return_4()
+        {
+            string[] reel1 = { "Wild", "Star", "Bell", "Shell", "Seven", "Queen", "Cherry", "King", "Bar", "Jack" };
+            string[] reel2 = { "Jack", "Star", "Queen", "Seven", "King", "Bell", "Wild", "Shell", "Bar", "Cherry" };
+            string[] reel3 = { "Cheery", "Bell", "Star", "Wild", "King", "Jack", "Shell", "Bar", "Seven", "Queen" };
+            List<string[]> reels = new List<string[]> { reel1, reel2, reel3 };
+            int[] spins = { 6, 8, 7 };
+            Assert.AreEqual(4, Fruit(reels, spins));
         }
 
 
@@ -105,6 +117,7 @@ namespace FruitMachine2
             var result = slotResult
                 .GroupBy(r => r)
                 .Select(g => new { item = g.Key, count = g.Count() })
+                .OrderByDescending(x => x.count)
                 .ToList();
             return new Item(result[0].item, result[0].count);
         }
