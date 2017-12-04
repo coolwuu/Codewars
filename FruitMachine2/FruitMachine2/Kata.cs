@@ -22,6 +22,14 @@ namespace FruitMachine2
             int[] spins = { 9, 9, 4 };
             Assert.AreEqual(1, Fruit(reels, spins));
         }
+        [Test]
+        public void Three_of_Jack_return_10()
+        {
+            string[] reel = { "Wild", "Star", "Bell", "Shell", "Seven", "Cherry", "Bar", "King", "Queen", "Jack" };
+            List<string[]> reels = new List<string[]> { reel, reel, reel };
+            int[] spins = { 9, 9, 4 };
+            Assert.AreEqual(10, Fruit(reels, spins));
+        }
 
         private static int Fruit(List<string[]> reels, int[] spins)
         {
