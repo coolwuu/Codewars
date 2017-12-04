@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 
 namespace FruitMachine2
@@ -38,6 +39,13 @@ namespace FruitMachine2
             {
                 slotResult.Add(reels[i][spins[i]]);
             }
+
+            var matchingItem = slotResult
+                .GroupBy(r => r)
+                .Select(result => new { item = result.Key, count = result.Count() })
+                .ToList();
+            if (matchingItem[0].count == 3)
+                return 10;
             if (TwoSameItemsIn(slotResult))
                 return 1;
             return 0;
