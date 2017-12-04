@@ -27,7 +27,7 @@ namespace FruitMachine2
         {
             string[] reel = { "Wild", "Star", "Bell", "Shell", "Seven", "Cherry", "Bar", "King", "Queen", "Jack" };
             List<string[]> reels = new List<string[]> { reel, reel, reel };
-            int[] spins = { 9, 9, 4 };
+            int[] spins = { 9, 9, 9 };
             Assert.AreEqual(10, Fruit(reels, spins));
         }
 
