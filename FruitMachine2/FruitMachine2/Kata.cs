@@ -43,7 +43,7 @@ namespace FruitMachine2
             var matchingItem = GetMatchingItemBy(slotResult);
             if (matchingItem.Count == 3)
                 return 10;
-            if (matchingItem.Count ==2)
+            if (matchingItem.Count == 2)
                 return 1;
             return 0;
         }
@@ -54,12 +54,7 @@ namespace FruitMachine2
                 .GroupBy(r => r)
                 .Select(g => new { item = g.Key, count = g.Count() })
                 .ToList();
-            return new Item(result[0].item,result[0].count);
-        }
-
-        private static bool TwoSameItemsIn(List<string> result)
-        {
-            return result[0] == result[1] || result[1] == result[2] || result[0] == result[2];
+            return new Item(result[0].item, result[0].count);
         }
     }
 
