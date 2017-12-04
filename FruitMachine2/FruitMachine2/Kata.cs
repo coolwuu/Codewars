@@ -42,6 +42,15 @@ namespace FruitMachine2
             Assert.AreEqual(2, Fruit(reels, spins));
         }
 
+        [Test]
+        public void Two_of_Wild__return_10()
+        {
+            string[] reel = { "Wild", "Star", "Bell", "Shell", "Seven", "Cherry", "Bar", "King", "Queen", "Jack" };
+            List<string[]> reels = new List<string[]> { reel, reel, reel };
+            int[] spins = { 0, 9, 0 };
+            Assert.AreEqual(10, Fruit(reels, spins));
+        }
+
 
         private static int Fruit(List<string[]> reels, int[] spins)
         {
@@ -51,10 +60,10 @@ namespace FruitMachine2
                 slotResult.Add(reels[i][spins[i]]);
             }
             var item = GetMatchingItemIn(slotResult);
-            return GetScoreBy(item,slotResult);
+            return GetScoreBy(item, slotResult);
         }
 
-        private static int GetScoreBy(Item item,List<string> slotResult)
+        private static int GetScoreBy(Item item, List<string> slotResult)
         {
             var bonusRate = 2;
             var scoreMapping = new Dictionary<string, Dictionary<string, int>>()
