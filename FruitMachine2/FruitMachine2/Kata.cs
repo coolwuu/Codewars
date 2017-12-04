@@ -55,7 +55,12 @@ namespace FruitMachine2
             if (matchingItem.Count == 3)
                 return 10;
             if (matchingItem.Count == 2)
+            {
+                if (slotResult.Contains("Wild"))
+                    return 2;
                 return 1;
+            }
+                
             return 0;
         }
 
