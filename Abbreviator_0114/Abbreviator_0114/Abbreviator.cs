@@ -8,8 +8,7 @@ namespace Abbreviator_0114
         {
             if (input.Length <= 3)
                 return input;
-            var result = input.First() + (input.Length - 2).ToString() + input.Last();
-            return result;
+            return input.First() + (input.Length - 2).ToString() + input.Last();
         }
     }
 }
