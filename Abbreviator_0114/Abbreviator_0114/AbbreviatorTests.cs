@@ -12,10 +12,10 @@ namespace Abbreviator_0114
     {
         private readonly Abbreviator _abbreviator = new Abbreviator();
 
-        [Test]
-        public void Abbreviate()
+        [TestCase("ant","ant",TestName = "Return_input_when_length_equal_to_3")]
+        public void Abbreviate(string expected, string input)
         {
-            Assert.AreEqual("ant", _abbreviator.Abbreviate("ant"));
+            Assert.AreEqual(expected, _abbreviator.Abbreviate(input));
         }
     }
 }
