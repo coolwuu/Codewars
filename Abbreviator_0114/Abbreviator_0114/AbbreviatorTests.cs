@@ -12,6 +12,7 @@ namespace Abbreviator_0114
     {
         private readonly Abbreviator _abbreviator = new Abbreviator();
 
+        [TestCase("a", "a", TestName = "Return_input_when_length_equal_to_1")]
         [TestCase("ant","ant",TestName = "Return_input_when_length_equal_to_3")]
         public void Abbreviate(string expected, string input)
         {
