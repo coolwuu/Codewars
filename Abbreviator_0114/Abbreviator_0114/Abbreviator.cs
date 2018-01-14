@@ -4,7 +4,9 @@
     {
         public string Abbreviate(string input)
         {
-            return input;
+            if (input.Length <= 3)
+                return input;
+            return string.Empty;
         }
     }
 }
