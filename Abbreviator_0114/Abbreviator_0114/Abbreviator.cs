@@ -4,7 +4,7 @@
     {
         public string Abbreviate(string input)
         {
-            throw new System.NotImplementedException();
+            return input;
         }
     }
 }
