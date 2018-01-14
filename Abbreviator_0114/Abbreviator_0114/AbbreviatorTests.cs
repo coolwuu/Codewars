@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Abbreviator_0114
 {
-    public class Abbreviator
+    public class AbbreviatorTests
     {
+
     }
 }
