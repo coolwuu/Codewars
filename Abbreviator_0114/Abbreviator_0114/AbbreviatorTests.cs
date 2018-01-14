@@ -16,6 +16,7 @@ namespace Abbreviator_0114
         [TestCase("an","an",TestName = "Return_input_when_length_equal_to_2")]
         [TestCase("ant","ant",TestName = "Return_input_when_length_equal_to_3")]
         [TestCase("a2s","ants",TestName = "Return_input_when_length_equal_to_4")]
+        [TestCase("m3y","money",TestName = "Return_input_when_length_equal_to_5")]
         public void Abbreviate(string expected, string input)
         {
             Assert.AreEqual(expected, _abbreviator.Abbreviate(input));
