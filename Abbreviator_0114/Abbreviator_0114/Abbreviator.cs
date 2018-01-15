@@ -1,4 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using NUnit.Framework;
 
 namespace Abbreviator_0114
 {
@@ -8,7 +12,13 @@ namespace Abbreviator_0114
         {
             if (input.Length <= 3)
                 return input;
-            return input.First() + (input.Length - 2).ToString() + input.Last();
+            var result = new List<string>();
+            var words = Regex.Split(input, @"\W+");
+            foreach (var word in words)
+            {
+                result.Add(word.First() + (word.Length - 2).ToString() + word.Last()); 
+            }
+            return String.Join(" ",result.ToArray());
         }
     }
 }
