@@ -10,15 +10,20 @@ namespace Abbreviator_0114
     {
         public string Abbreviate(string input)
         {
-            if (input.Length <= 3)
-                return input;
-            var result = new List<string>();
             var words = Regex.Split(input, @"\W+");
             foreach (var word in words)
             {
-                result.Add(word.First() + (word.Length - 2).ToString() + word.Last()); 
+                if (word.Length >= 4)
+                {
+                    input = input.Replace(word, Abbreviated(word));
+                }
             }
-            return String.Join(" ",result.ToArray());
+            return input;
+        }
+
+        private static string Abbreviated(string word)
+        {
+            return word.First() + (word.Length - 2).ToString() + word.Last();
         }
     }
 }

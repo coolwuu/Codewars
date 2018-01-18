@@ -20,6 +20,8 @@ namespace Abbreviator_0114
         [TestCase("m3y m4y","money monkey",TestName = "Return input when pass in 2 words")]
         [TestCase("m3y m4y m6s","money monkey memories",TestName = "Return input when pass in 3 words")]
         [TestCase("e6t-r2e","elephant-ride",TestName = "Return input when pass in 2 words with special character")]
+        [TestCase("my. dog, isn't f5g v2y w2l.", "my. dog, isn't feeling very well.", TestName = "Return input when key in sentence with special character")]
+        [TestCase("a4e a5d", "active actived", TestName = "Return input when key in sentence with special character")]
         public void Abbreviate(string expected, string input)
         {
             Assert.AreEqual(expected, _abbreviator.Abbreviate(input));
