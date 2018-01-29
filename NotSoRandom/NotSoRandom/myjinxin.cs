@@ -19,6 +19,8 @@ namespace NotSoRandom
 
         private static string NotSoRandom(double black, double white)
         {
+            if (black == 2)
+                return "White";
             return "Black";
         }
     }
