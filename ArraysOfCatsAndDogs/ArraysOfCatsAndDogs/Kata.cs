@@ -13,11 +13,14 @@ namespace ArraysOfCatsAndDogs
         [Test]
         public void Test()
         {
-            Assert.AreEqual(1,Kata.Solve(new List<char>{'D','C'},1));
+            Assert.AreEqual(1,Solve(new List<char>{'D','C'},1));
+            Assert.AreEqual(0,Solve(new List<char>{'D','D'},0));
         }
 
         private static int Solve(List<char> pets, int steps)
         {
+            if (!pets.Contains('C'))
+                return 0;
             return 1;
         }
     }
