@@ -18,7 +18,7 @@ namespace ArraysOfCatsAndDogs
 
         private static int Solve(List<char> pets, int steps)
         {
-            throw new NotImplementedException();
+            return 1;
         }
     }
 }
