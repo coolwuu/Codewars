@@ -11,9 +11,14 @@ namespace ArraysOfCatsAndDogs
     public class Kata
     {
         [Test]
-        public void Test()
+        public void one_dog_one_cat_one_step()
         {
             Assert.AreEqual(1,Solve(new List<char>{'D','C'},1));
+        }
+
+        [Test]
+        public void no_cat_one_step()
+        {
             Assert.AreEqual(0,Solve(new List<char>{'D','D'},0));
         }
 
