@@ -15,6 +15,7 @@ namespace NotSoRandom
         [TestCase(1, 2, "Black", TestName = "one_black_two_white_should_return_black")]
         [TestCase(2, 2, "White", TestName = "2_black_2_white_should_return_white")]
         [TestCase(3, 2, "Black", TestName = "3_black_2_white_should_return_Black")]
+        [TestCase(3, 3, "White", TestName = "3_black_3_white_should_return_white")]
         public void Test(double black, double white, string expected)
         {
             Assert.AreEqual(expected, NotSoRandom(black, white));
