@@ -24,7 +24,12 @@ namespace NotSoRandom
 
         private static string NotSoRandom(double black, double white)
         {
-            return black % 2 == 0 ? "White" : "Black";
+            return IsEven(black) ? "White" : "Black";
+        }
+
+        private static bool IsEven(double black)
+        {
+            return black % 2 == 0;
         }
     }
 }
